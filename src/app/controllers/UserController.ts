@@ -27,6 +27,8 @@ class UserController {
     // salvando os registros no banco de dados
     await repository.save(user)
 
+    delete user.password
+
     // retornando os dados do usuário criado
     return res.status(201).json(user)
   }
